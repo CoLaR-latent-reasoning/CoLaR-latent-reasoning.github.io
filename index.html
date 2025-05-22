@@ -228,12 +228,25 @@
 
       </div>
     </div>
+  </div>
+</section>
 
-    <div>*Thanks to <a href="nerfies.github.io">nerfies</a> for their webpage template.</div>
-
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we introduce Compressed Latent Reasoning (CoLaR), a framework that dynamically compresses LLM reasoning chains into latent space while maintaining exploration-exploitation capabilities. Our method centers on three key innovations: (1) compressed latent reasoning through an auxiliary next compressed embedding prediction task that encapsulates the semantics of multiple tokens, (2) dynamic training and inference with variable compression factors that allows for flexible reasoning chain lengths and fully parallelized processing, and (3) a probabilistic latent head for reinforcement learning that enables exploration of diverse reasoning pathways for higher accuracy while exploiting shorter reasoning chains for efficiency. Our experimental results demonstrate that CoLaR achieves a $14.1\%$ improvement in accuracy compared to state-of-the-art latent-based reasoning methods, while reducing reasoning chain length by $53.3\%$ with only a $4.8\%$ performance degradation relative to explicit CoT. On the challenging MATH dataset, reinforcement learning techniques further boost CoLaR's performance by $5.36\%$ while dramatically reducing reasoning chain length by $82.8\%$.  Future work will focus on addressing non-integer compression factors, exploring more sophisticated reinforcement learning approaches, and extending our dynamic compression mechanism to more diverse reasoning tasks beyond mathematics.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 
+<div>*Thanks to <a href="nerfies.github.io">nerfies</a> for their webpage template.</div>
 </body>
 </html>
