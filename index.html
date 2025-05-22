@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Think Silently, Think Fast: Dynamic Latent Compression of LLM Reasoning Chains">
+  <title>Think Silently, Think Fast: Dynamic Latent Compression of LLM Reasoning Chains</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']], // Enable $...$ for inline math
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Think Silently, Think Fast: Dynamic Latent Compression of LLM Reasoning Chains</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://alberttan404.github.io">Albert Wenhui Tan</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=eIuGSe4AAAAJ&hl=en&oi=ao">Jiaze Li</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=W1sZaQ0AAAAJ&hl=en&oi=ao">Jianzhong Ju</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Sh6y-_EAAAAJ&hl=en&oi=ao">Zhenbo Luo</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=6Z8RUi4AAAAJ&hl=en&oi=ao">Jian Luan</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=v5LctN8AAAAJ&hl=en&oi=ao">Ruihua Song</a><sup>1</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Renmin University of China,</span>
+            <span class="author-block"><sup>2</sup>Xiaomi</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (comming soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.png">
+      <h2 class="subtitle has-text-centered">
+        <p>
+          Our proposed Compressed Latent Reasoning Model (CoLaR) performs dynamic-speed reasoning by auto-regressively predicting latent variables, each compressing information from multiple word tokens. Simply prompting to reason faster enables CoLaR to predict more informative latents.
+        </p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large Language Models (LLMs) achieve superior performance through Chain-of-Thought (CoT) reasoning, but these token-level reasoning chains are computationally expensive and inefficient.  In this paper, we introduce Compressed Latent Reasoning (CoLaR), a novel framework that dynamically compresses reasoning processes in latent space through a two-stage training approach.  First, during supervised fine-tuning, CoLaR extends beyond next-token prediction by incorporating an auxiliary next compressed embedding prediction objective. This process merges embeddings of consecutive tokens using a compression factor $c$ randomly sampled from a predefined range, and trains a specialized latent head to predict distributions of subsequent compressed embeddings.  Second, we enhance CoLaR through reinforcement learning (RL) that leverages the latent head's non-deterministic nature to explore diverse reasoning paths and exploit more compact ones.  This approach enables CoLaR to: i) \textbf{perform reasoning at a dense latent level} (i.e., silently), substantially reducing reasoning chain length, and ii) \textbf{dynamically adjust reasoning speed} at inference time by simply prompting the desired compression factor.  Extensive experiments across four mathematical reasoning datasets demonstrate that CoLaR achieves $14.1\%$ higher accuracy than latent-based baseline methods at comparable compression ratios, and reduces reasoning chain length by $53.3\%$ with only $4.8\%$ performance degradation compared to explicit CoT method. Moreover, when applied to more challenging mathematical reasoning tasks, our RL-enhanced CoLaR demonstrates performance gains of up to $5.4\%$ while dramatically reducing latent reasoning chain length by $82.8\%$.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overall method</h2>
+        <img src="./static/images/training.png">
+        <div class="content has-text-justified">
+          <p>
+            Our proposed method CoLaR consisting an LLM backbone and a Latent Head. During the \textbf{SFT stage (left)}, for each training step, CoLaR first compresses embeddings $\mathbf{e}_r$ of the original reasoning chain into compressed embeddings $\mathbf{e}_c$ with a compression factor $c$ randomly selected from the range $[1, c_{max}]$. Then, CoLaR is trained to predict: i) the compressed reasoning embeddings via the Latent Head, and ii) the compressed reasoning tokens and answer tokens through the Language Head. During the \textbf{RL stage (right)}, for every question input, CoLaR samples a group of $G$ outputs $o_{1:G}$ consisting of the latent reasoning chain and the predicted answer. We then calculate the relative rewards $a_{1:G}$ for each output, and the rewards are averaged on each token ($\bar{a}_i$), encouraging CoLaR to explore diverse latent reasoning pathways and exploit those more compact ones.
+          </p>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>Given $\mathbf{t}, \mathbf{e}, \mathbf{h}$ denote tokens, embeddings, and hidden states, respectively, and subscripts $q, r, c, a$ denote question, reasoning chain, compressed (latent) reasoning chain, and answer, respectively,</p>
+          <p>The objective of SFT stage could be formulated as the sum of the following two losses:</p>
+          <p>
+            $\mathcal{L}_{\text{comp}}=-\frac{1}{L_a+L_c}\sum_{i=1}^{L_a+L_c}\log p([\mathbf{t}_c,\mathbf{t}_a]^i|[\mathbf{e}_c, \mathbf{e}_a]^{1:i-1}, \mathbf{e}_q)$,
+          </p>
+          <p>and</p>
+          <p>$\mathcal{L}_{\text{latent}}(i)= -\log p(e_c^i \mid \hat{\mu}_c^i, \hat{\sigma}_c^i) = \frac{(e_c^i - \hat{\mu}_c^i)^2}{2\hat{\sigma}_c^i} + \log \hat{\sigma}_c^i$.</p>
+          <p>The objective of RL stage could be formulated as:</p>
+          <p>
+            $\mathcal{L}_{\text{GRPO}} = -\frac{1}{G}\sum_{i=1}^{G}\left(
+              \min \left(
+                    \frac{\pi_{\theta}\left(o_i | q \right)}{\pi_{\theta_{\text{old}}}\left(o_i | q \right)}A_i,
+                    \text{clip}\left(
+                        \frac{\pi_{\theta}\left(o_i | q \right)}{\pi_{\theta_{\text{old}}}\left(o_i | q \right)},
+                        1 - \epsilon,
+                        1 + \epsilon
+                    \right) A_i
+                \right)
+            \right)$.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+
+        <div id="gsm" class="exp">
+          <h4 class="title is-4">Experimental results on Grade School Math (GSM) datasets</h4>
+          <img src="./static/images/gsm_results.png">
+        </div>
+
+        <div id="math" class="exp">
+          <h4 class="title is-4">Experimental results on the challenging MATH dataset</h4>
+          <img src="./static/images/math_results.png">
+          <p></p>
+        </div>
+
+        <div id="compression-factor" class="exp">
+          <h4 class="title is-4">Analyses on compression factor $c$</h4>
+          <img src="./static/images/c_analyses.png">
+          <p></p>
+        </div>
+
+        <div id="case-study" class="exp">
+          <h4 class="title is-4">Case study on GSM datasets</h4>
+          <img src="./static/images/case_study.png">
+          <p></p>
+        </div>
+
+        <div id="layerwise" class="exp">
+          <h4 class="title is-4">Layersize analyses</h4>
+          <img src="./static/images/layerwise.png" width="70%">
+          <p></p>
+        </div>
+
+        <div id="rl-curve" class="exp">
+          <h4 class="title is-4">GRPO training curve</h4>
+          <img src="./static/images/rl_curve.png">
+          <p></p>
+        </div>
+
+        <div id="scaling" class="exp">
+          <h4 class="title is-4">Scaling analyses</h4>
+          <img src="./static/images/scaling.png" width="70%">
+          <p></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div>*Thanks to <a href="nerfies.github.io">nerfies</a> for their webpage template.</div>
+
+  </div>
+</section>
+
+
+</body>
+</html>
