@@ -153,13 +153,13 @@
         <div class="content has-text-justified">
           <p>Given $\mathbf{t}, \mathbf{e}, \mathbf{h}$ denote tokens, embeddings, and hidden states, respectively, and subscripts $q, r, c, a$ denote question, reasoning chain, compressed (latent) reasoning chain, and answer, respectively,</p>
           <p>The objective of SFT stage could be formulated as the sum of the following two losses (MathJax included):</p>
-          <p>
+          <p class="has-text-centered">
             $\mathcal{L}_{\text{comp}}=-\frac{1}{L_a+L_c}\sum_{i=1}^{L_a+L_c}\log p([\mathbf{t}_c,\mathbf{t}_a]^i|[\mathbf{e}_c, \mathbf{e}_a]^{1:i-1}, \mathbf{e}_q)$,
           </p>
           <p>and</p>
-          <p>$\mathcal{L}_{\text{latent}}(i)= -\log p(e_c^i \mid \hat{\mu}_c^i, \hat{\sigma}_c^i) = \frac{(e_c^i - \hat{\mu}_c^i)^2}{2\hat{\sigma}_c^i} + \log \hat{\sigma}_c^i$.</p>
+          <p class="has-text-centered">$\mathcal{L}_{\text{latent}}(i)= -\log p(e_c^i \mid \hat{\mu}_c^i, \hat{\sigma}_c^i) = \frac{(e_c^i - \hat{\mu}_c^i)^2}{2\hat{\sigma}_c^i} + \log \hat{\sigma}_c^i$.</p>
           <p>The objective of RL stage could be formulated as:</p>
-          <p>
+          <p class="has-text-centered">
             $\mathcal{L}_{\text{GRPO}} = -\frac{1}{G}\sum_{i=1}^{G}\left(
               \min \left(
                     \frac{\pi_{\theta}\left(o_i | q \right)}{\pi_{\theta_{\text{old}}}\left(o_i | q \right)}A_i,
